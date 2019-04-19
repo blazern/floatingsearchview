@@ -5,12 +5,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '28.0.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 13
         versionName "2.1.1"
         //consumerProguardFiles 'consumer-proguard-rules.txt'
@@ -18,12 +18,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'androidx.appcompat:appcompat:1.1.0-alpha01'
-    compile 'androidx.recyclerview:recyclerview:1.1.0-alpha01'
-    compile 'com.google.android.material:material:1.1.0-alpha02'
-    compile 'androidx.cardview:cardview:1.0.0'
-    compile 'com.bartoszlipinski:viewpropertyobjectanimator:1.4.5'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha04'
+    implementation 'com.google.android.material:material:1.1.0-alpha05'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.bartoszlipinski:viewpropertyobjectanimator:1.4.5'
 }
 
 //enable when uploading lib// apply from: 'maven-push.gradle'
