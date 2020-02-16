@@ -1340,11 +1340,10 @@ public class FloatingSearchView extends FrameLayout {
      * @param newSearchSuggestions a list containing the new suggestions
      */
     public void swapSuggestions(final List<? extends SearchSuggestion> newSearchSuggestions) {
-        Collections.reverse(newSearchSuggestions);
         swapSuggestions(newSearchSuggestions, true);
     }
 
-    private void swapSuggestions(final List<? extends SearchSuggestion> newSearchSuggestions,
+    public void swapSuggestions(final List<? extends SearchSuggestion> newSearchSuggestions,
                                  final boolean withAnim) {
 
         mSuggestionsList.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
