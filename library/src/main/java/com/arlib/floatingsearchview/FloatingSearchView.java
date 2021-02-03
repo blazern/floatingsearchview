@@ -201,6 +201,8 @@ public class FloatingSearchView extends FrameLayout {
     private long mSuggestionSectionAnimDuration;
     private OnClearSearchActionListener mOnClearSearchActionListener;
 
+    private boolean mConsumeOutsideClicksWhenFocused = true;
+
     //An interface for implementing a listener that will get notified when the suggestions
     //section's height is set. This is to be used internally only.
     private interface OnSuggestionSecHeightSetListener {
@@ -1132,9 +1134,19 @@ public class FloatingSearchView extends FrameLayout {
                     setSearchFocusedInternal(false);
                 }
 
-                return true;
+                return mConsumeOutsideClicksWhenFocused;
             }
         });
+    }
+
+    /**
+     * Set whether a touch outside of the search bar's bounds (when it's focused) will
+     * be consumed or not. If consumed, the touch won't be able to reach views underneath.
+     *
+     * @param consume true to consume, false otherwise.
+     */
+    public void setConsumeOutsideClicksWhenFocused(boolean consume) {
+        mConsumeOutsideClicksWhenFocused = consume;
     }
 
     /**
